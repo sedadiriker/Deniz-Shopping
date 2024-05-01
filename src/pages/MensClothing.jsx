@@ -37,15 +37,15 @@ const MensClothing = () => {
       {loading ? (
         <Loading/>
       ):(
-        <>
-        <Typography px={5} variant="h4"> Men's Clothing</Typography>
+        <Box minHeight="85vh">
+        <Typography sx={{color:"brown"}} px={5} variant="h4"> Men's Clothing</Typography>
       <Box px={2} py={5} display={"flex"} flexWrap={"wrap"} justifyContent={"center"} gap={5}>
         {
           products.map(product => (
               <ProductCard key={product.id} {...product}/>
           ))
         }
-      </Box></>
+      </Box></Box>
       )}
       
       </>

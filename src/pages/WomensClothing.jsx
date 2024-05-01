@@ -37,7 +37,7 @@ const WomensClothing = () => {
         <Loading/>
       ):(
         <>
-        <Typography px={5} variant="h4"> Women's Clothing</Typography>
+        <Typography sx={{color:"brown"}} px={5} variant="h4"> Women's Clothing</Typography>
       <Box px={2} py={5} display={"flex"} flexWrap={"wrap"} justifyContent={"center"} gap={5}>
         {
           products.map(product => (

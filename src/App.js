@@ -5,13 +5,14 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { Box } from "@mui/material";
 function App() {
   return (
-    <div className="App">
+    <Box sx={{backgroundColor:"rgb(246, 239, 231)"}} className="App">
       <Provider store={store}>
       <AppRouter/>
       </Provider>
-    </div>
+    </Box>
   );
 }
 

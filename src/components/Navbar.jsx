@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import StorefrontIcon from '@mui/icons-material/Storefront';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const pages = ['Home','Electronics', 'Jewelery', "Men's Clothing", "Women's Clothing"];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -20,7 +21,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const navigate = useNavigate()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -38,15 +39,15 @@ function Navbar() {
 
   return (
     <>
-    <AppBar position="static" sx={{ backgroundColor: "black" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <StorefrontIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+            component={Link}
+            to="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -108,12 +109,11 @@ function Navbar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'brown',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DENİZ SHOP
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -129,7 +129,8 @@ function Navbar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box display={'flex'} sx={{ flexGrow: 0 }}>
+          <Button sx={{color:'brown'}} onClick={()=>navigate("/basket")}><ShoppingCartIcon/></Button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -161,7 +162,7 @@ function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
-    <Box height={40}></Box>
+    <Box sx={{backgroundColor:"rgb(246, 239, 231)"}} height="15vh"></Box>
     </>
     
   );

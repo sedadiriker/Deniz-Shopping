@@ -8,7 +8,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ProductCard = ({image,title,category}) => {
   return (
-    <Card sx={{ width: 300,position:"relative"}}>
+    <Card sx={{ width: 300,position:"relative", borderRadius:"10px", boxShadow:"1px 2px 15px gray"}}>
       <CardActionArea>
         <CardMedia
           component="img"

@@ -1,8 +1,9 @@
+import EmptyBasket from "../components/EmptyBasket"
 
 const Basket = () => {
   return (
     <div>
-      Basket
+      <EmptyBasket/>
     </div>
   )
 }

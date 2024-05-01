@@ -19,6 +19,7 @@ const AppRouter = () => {
       <Route path="Jewelery" element={<Jewelery/>}/>
       <Route path="Men's Clothing" element={<MensClothing/>}/>
       <Route path="Women's Clothing" element={<WomensClothing/>}/>
+      <Route path="basket" element={<Basket/>}/>
       <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>
