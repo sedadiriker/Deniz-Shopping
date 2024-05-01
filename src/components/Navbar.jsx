@@ -7,9 +7,7 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import { Link, useNavigate } from "react-router-dom";
@@ -49,7 +47,7 @@ function Navbar() {
   return (
     <>
       <AppBar
-        position="fixed"
+        position="static"
         sx={{ backgroundColor: "#90a4ae", top: "10px", height: "15vh" }}
       >
         <Container maxWidth="xl" sx={{height:"100%"}}>
@@ -192,7 +190,7 @@ function Navbar() {
         </Container>
       </AppBar>
 
-      <Box height="20vh"></Box>
+      <Box height="7vh"></Box>
     </>
   );
 }
