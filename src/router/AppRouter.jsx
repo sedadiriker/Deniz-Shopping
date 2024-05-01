@@ -5,6 +5,8 @@ import NotFound from "../pages/NotFound"
 import Navbar from "../components/Navbar"
 import Electronics from "../pages/Electronics"
 import Jewelery from "../pages/Jewelery"
+import MensClothing from "../pages/MensClothing"
+import WomensClothing from "../pages/WomensClothing"
 
 const AppRouter = () => {
   return (
@@ -15,6 +17,8 @@ const AppRouter = () => {
       <Route path="basket" element={<Basket/>}/>
       <Route path="Electronics" element={<Electronics/>}/>
       <Route path="Jewelery" element={<Jewelery/>}/>
+      <Route path="Men's Clothing" element={<MensClothing/>}/>
+      <Route path="Women's Clothing" element={<WomensClothing/>}/>
       <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>
