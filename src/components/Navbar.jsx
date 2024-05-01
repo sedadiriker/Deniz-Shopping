@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import { Link } from 'react-router-dom';
 
 const pages = ['Home','Electronics', 'Jewelery', "Men's Clothing", "Women's Clothing"];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -36,6 +37,7 @@ function Navbar() {
   };
 
   return (
+    <>
     <AppBar position="static" sx={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -116,6 +118,8 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+              component={Link}
+              to={`/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -157,6 +161,9 @@ function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
+    <Box height={40}></Box>
+    </>
+    
   );
 }
 export default Navbar;

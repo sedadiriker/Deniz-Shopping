@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import ProductCard from "../components/ProductCard"
 import { Box } from "@mui/material"
 
-const Electronics = () => {
+const Jewelery = () => {
     const [products,setProducts] = useState([])
 
     const URL = 'https://fakestoreapi.com/products'
@@ -12,7 +12,7 @@ const Electronics = () => {
         
         try{
             const {data} = await axios(URL)
-            const elekctronicsProducts = data.filter(product => product.category === 'electronics' )
+            const elekctronicsProducts = data.filter(product => product.category === 'jewelery' )
             setProducts(elekctronicsProducts)
         }catch(err){
             console.log(err)
@@ -33,4 +33,4 @@ const Electronics = () => {
   )
 }
 
-export default Electronics
+export default Jewelery
