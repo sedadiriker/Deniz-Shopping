@@ -7,6 +7,7 @@ import Electronics from "../pages/Electronics"
 import Jewelery from "../pages/Jewelery"
 import MensClothing from "../pages/MensClothing"
 import WomensClothing from "../pages/WomensClothing"
+import Footer from "../components/Footer"
 
 const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ const AppRouter = () => {
     <Navbar/>
     <Routes>
       <Route path="/Home" element={<Home/>}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="basket" element={<Basket/>}/>
       <Route path="Electronics" element={<Electronics/>}/>
       <Route path="Jewelery" element={<Jewelery/>}/>
@@ -22,6 +24,7 @@ const AppRouter = () => {
       <Route path="basket" element={<Basket/>}/>
       <Route path="*" element={<NotFound/>}/>
     </Routes>
+    <Footer/>
     </>
     
   )
