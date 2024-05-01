@@ -4,8 +4,8 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Provider } from "react-redux";
-import { store } from "./store/store";
 import { Box } from "@mui/material";
+import { store } from "./redux/store/store";
 function App() {
   return (
     <Box sx={{backgroundColor:"rgb(246, 239, 231)"}} className="App">

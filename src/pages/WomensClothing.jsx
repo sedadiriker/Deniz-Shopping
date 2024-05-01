@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 import ProductCard from "../components/ProductCard"
 import { Box, Typography } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
-import { startLoading, stopLoading } from "../store/loadingReducer"
+import { startLoading, stopLoading } from "../redux/actions/loadingAction"
 import Loading from "../components/Loading"
 const WomensClothing = () => {
     const [products,setProducts] = useState([])
     const dispatch = useDispatch()
-    const loading = useSelector((state)=> state.loading)
+    const {loading} = useSelector((state)=> state.loading)
     const URL = 'https://fakestoreapi.com/products'
 
     const getProducts = async () => {

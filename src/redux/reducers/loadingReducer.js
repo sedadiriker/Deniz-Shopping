@@ -1,12 +1,8 @@
+import {start,stop} from "..//types/loadingType"
+
 const initialState = {
     loading:true
 }
-
-const start = "START"
-const stop = "STOP"
-
-export const startLoading = () => ({type:start})
-export const stopLoading = () => ({type:stop})
 
 export const loadingReducer = (state=initialState, {type})=> {
 switch (type) {
