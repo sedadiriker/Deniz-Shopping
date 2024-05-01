@@ -146,9 +146,7 @@ function Navbar() {
                 </Button>
               ))}
             </Box>
-
-            <Box display={"flex"} gap={3} sx={{ flexGrow: 0 }}>
-              <IconButton aria-label="cart">
+            <IconButton aria-label="cart">
                 <Badge
                   badgeContent={basket.length}
                   color="error"
@@ -160,6 +158,8 @@ function Navbar() {
                   />
                 </Badge>
               </IconButton>
+            {/* <Box display={"flex"} gap={3} sx={{ flexGrow: 0 }}>
+              
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -187,7 +187,7 @@ function Navbar() {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>

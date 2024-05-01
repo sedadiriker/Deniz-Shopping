@@ -32,7 +32,7 @@ const Electronics = () => {
         dispatch(stopLoading())
     }, 1000);
     },[])
-    console.log(loading)
+    // console.log(loading)
   return (
     <>
     {loading ? (

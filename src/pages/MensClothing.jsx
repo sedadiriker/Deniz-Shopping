@@ -31,7 +31,7 @@ const MensClothing = () => {
         dispatch(stopLoading())
     }, 1000);
     },[])
-    console.log(products)
+    // console.log(products)
     return (
       <>
       {loading ? (

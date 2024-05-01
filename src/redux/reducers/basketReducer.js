@@ -6,8 +6,11 @@ import {
   minusQuantity,
 } from "..//types/basketType";
 
+const initialBasket = JSON.parse(localStorage.getItem("basket")) || [];
+
+console.log(initialBasket)
 const initialState = {
-  basket: [],
+  basket: initialBasket
 };
 
 export const basketReducer = (state = initialState, { type, payload }) => {
@@ -21,26 +24,35 @@ export const basketReducer = (state = initialState, { type, payload }) => {
         return state;
       }
       const newItem = { ...payload, quantity: 1 };
+      updateLocalStorage({
+        basket: [...state.basket, newItem],
+      })
       return {
         basket: [...state.basket, newItem],
       };
 
     case remove:
+      updateLocalStorage({
+        basket: state.basket.filter((product) => product.id !== payload),
+      })
       return {
         basket: state.basket.filter((product) => product.id !== payload),
       };
 
     case clear:
+      updateLocalStorage(initialState)
       return initialState;
 
     case plusQantity:
-      return {
+      const newQuantity = {
         basket: state.basket.map((product) =>
           product.id === payload
             ? { ...product, quantity: product.quantity + 1 }
             : product
         ),
       };
+      updateLocalStorage(newQuantity)
+      return newQuantity
 
     case minusQuantity:
       const minusbasket = state.basket.map((product) =>
@@ -51,10 +63,17 @@ export const basketReducer = (state = initialState, { type, payload }) => {
       const filteredBasket = minusbasket.filter(
         (product) => product.quantity > 0
       );
+      updateLocalStorage({
+        basket: filteredBasket,
+      })
       return {
         basket: filteredBasket,
       };
+      
     default:
       return state;
   }
+};
+const updateLocalStorage = (state) => {
+  localStorage.setItem("basket", JSON.stringify(state.basket));
 };

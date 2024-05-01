@@ -6,3 +6,4 @@ export const clearBasket = () => ({type:clear})
 
 export const plusqantity = (id) => ({type:plusQantity,payload:id})
 export const minusquantity = (id) => ({type:minusQuantity,payload:id})
+

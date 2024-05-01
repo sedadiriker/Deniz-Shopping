@@ -25,17 +25,28 @@ const FiiledBasket = ({ basket }) => {
   });
   const dispatch = useDispatch();
 
+
+  
   const deleteProduct = (id) => {
     dispatch(removeProduct(id));
+
   };
 
   const addquantity = (id) => {
     dispatch(plusqantity(id));
+
   };
 
   const mInusquantity = (id) => {
     dispatch(minusquantity(id));
+
   };
+
+  const clearrBasket = () => {
+    dispatch(clearBasket)
+  }
+
+  
   return (
     <Box pb={5} minHeight="85vh">
       <Box
@@ -100,11 +111,11 @@ const FiiledBasket = ({ basket }) => {
                 bottom={2}
                 left={0}
               >
-                <Button onClick={() => addquantity(product.id)}>
+                <Button color="error" onClick={() => addquantity(product.id)}>
                   <AddIcon fontSize="small" />
                 </Button>
                 <Typography>{product.quantity}</Typography>
-                <Button onClick={() => mInusquantity(product.id)}>
+                <Button color="error" onClick={() => mInusquantity(product.id)}>
                   <RemoveIcon fontSize="small" />
                 </Button>
               </Box>
@@ -126,7 +137,7 @@ const FiiledBasket = ({ basket }) => {
       </Box>
       <Box width="75%" m="auto" mt={5} display={"flex"} justifyContent={"space-evenly"} alignItems={"center"}>
         <Typography>Subtotal <span style={{fontWeight:"bold", fontSize:"1.2rem"}}>{subtotal.toFixed(2)}$</span></Typography>
-        <Button onClick={()=> dispatch(clearBasket())} sx={{border:"1px solid brown", color:"brown"}}>Empty Cart</Button>
+        <Button onClick={()=> clearrBasket()} sx={{border:"1px solid brown", color:"brown"}}>Empty Cart</Button>
       </Box>
     </Box>
   );
