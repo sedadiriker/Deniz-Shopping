@@ -40,8 +40,8 @@ export const basketReducer = (state = initialState, { type, payload }) => {
       };
 
     case clear:
-      updateLocalStorage(initialState)
-      return initialState;
+      updateLocalStorage({basket:[]})
+      return {basket:[]};
 
     case plusQantity:
       const newQuantity = {

@@ -42,9 +42,7 @@ const FiiledBasket = ({ basket }) => {
 
   };
 
-  const clearrBasket = () => {
-    dispatch(clearBasket)
-  }
+
 
   
   return (
@@ -137,7 +135,7 @@ const FiiledBasket = ({ basket }) => {
       </Box>
       <Box width="75%" m="auto" mt={5} display={"flex"} justifyContent={"space-evenly"} alignItems={"center"}>
         <Typography>Subtotal <span style={{fontWeight:"bold", fontSize:"1.2rem"}}>{subtotal.toFixed(2)}$</span></Typography>
-        <Button onClick={()=> clearrBasket()} sx={{border:"1px solid brown", color:"brown"}}>Empty Cart</Button>
+        <Button onClick={()=> dispatch(clearBasket())} sx={{border:"1px solid brown", color:"brown"}}>Empty Cart</Button>
       </Box>
     </Box>
   );
